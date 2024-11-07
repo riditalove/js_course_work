@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>rock paper scissor clean code</title>
+    <style>
+        body{
+            background-color: rgb(25,25,25);
+            color: white;
+            font-family: Arial;
+        }
+        .title{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .move-icon{
+            height: 50px;
+        }
+        .move-button{
+            background-color: transparent;
+            border: 3px solid white;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="title">
+        Rock Paper Scissor game
+    </p>
+
+    <button onclick=" let card_selected_by_computer = computer_selection();
+          let verdict = result('Rock');
+          console.log(verdict);
+          console.log(scores(verdict));" class="move-button"><img src="rock-emoji.png" class="move-icon">
+    </button>
+
+    <button onclick="card_selected_by_computer = computer_selection();
+    verdict = result('Paper');
+    console.log(verdict);console.log(scores(verdict));" class="move-button" ><img src="paper-emoji.png" class="move-icon">
+    </button>
+
+    <button onclick="card_selected_by_computer = computer_selection();
+    verdict = result('Scissor');
+    console.log(verdict);console.log(scores(verdict));" class="move-button"> <img src="scissors-emoji.png" class="move-icon">
+    </button>
+
+    <button onclick="
+    score.wins=0;
+    score.loses=0;
+    score.ties=0;
+    localStorage.removeItem('score');
+    ">Reset</button>
+
+
+    <script>
+
+
+        let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, loses: 0, ties: 0 };
+        let card_name = '';
+
+        function computer_selection() {
+
+            let rand = (Math.random() * 100);
+            if (rand <= 30) {
+                card_name = 'Rock';
+            }
+            else if (rand > 30 && rand <= 60) {
+                card_name = 'Paper';
+            }
+            else if (rand > 60) {
+                card_name = 'Scissor';
+            }
+
+            return card_name;
+
+        }
+        function result(card) {
+            let card_computer = computer_selection();
+            let verdi = '';
+            if (card === 'Rock') {
+
+                if (card_computer === 'Rock') {
+                    verdi = 'Tie';
+                }
+                else if (card_computer === 'Paper') {
+                    verdi = 'You lose';
+
+                }
+                else if (card_computer === 'Scissor') {
+                    verdi = 'You win';
+                }
+
+            }
+            else if (card === 'Scissor') {
+
+                if (card_computer === 'Scissor') {
+                    verdi = 'Tie';
+                }
+                else if (card_computer === 'Paper') {
+                    verdi = 'You win';
+
+                }
+                else if (card_computer === 'Rock') {
+                    verdi = 'You lose';
+                }
+
+            }
+            else if (card === 'Paper') {
+
+                if (card_computer === 'Paper') {
+                    verdi = 'Tie';
+                }
+                else if (card_computer === 'Scissor') {
+                    verdi = 'You lose';
+
+                }
+                else if (card_computer === 'Rock') {
+                    verdi = 'You win';
+                }
+
+            }
+
+            return verdi;
+
+
+
+
+
+        }
+        function scores(ver) {
+
+            if (ver === 'You win') {
+
+                score.wins = score.wins + 1;
+            }
+            else if (ver === 'You lose') {
+                score.loses = score.loses + 1;
+            }
+            else if (ver === 'Tie') {
+                score.ties = score.ties + 1;
+            }
+            localStorage.setItem('score', JSON.stringify(score));
+            return score;
+
+        }
+
+
+
+    </script>
+    <button onclick="
+
+    /*setInterval(() => {
+        let card_by_AI = computer_selection();
+        let ok = result(card_by_AI);   
+        console.log(ok);  
+    }, 2000);*/
+    
+    
+    
+    
+    ">AutoPlay</button>
+</body>
+
+</html>

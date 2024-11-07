@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Objects of Javascipt</title>
+
+    </head>
+
+    <body>
+
+        <script>
+            /*const product = {
+                name : 'socks',
+                price : 50
+
+            };
+            console.log(product);
+
+            const sports = {
+                name : 'football',
+                venue : 'London',
+                time : '10 pm',
+                area : 'part street'
+            };
+            console.log(sports);
+
+            //how to access the properties of objects
+            
+            console.log(sports.name);
+            console.log(sports.area);
+
+            //how to change the value of a propoerty in an object
+            sports.name = 'cricket';
+            sports.venue = 'Bangladesh';
+            console.log(sports.venue);
+            console.log(sports.name);
+
+            //adding new property to objects
+            sports.newProperty = true;
+            sports.duration = 90;
+
+            console.log(sports);
+            
+            //deleting properties of objects
+            delete sports.time;
+            console.log(sports);
+
+            delete product.price;
+            console.log(product);
+
+            //type of object is object
+            console.log(typeof product);*/
+            
+            //ways to access the objects
+            let person = {
+                name : 'Bibbojaan',
+                occupation : 'Tawaif',
+                hobby : 'dance'
+
+
+            };
+            console.log(person);
+            console.log(person['hobby']);
+            console.log(person.name);
+
+            //why do we use bracket notation
+            // example of object inside object
+            // we can use function inside the object
+            const car = {
+                name : 'maruti suzuki',
+                color : 'red',
+                'duration-life' : '1000 days',
+                reveiws : {
+                    fabiha : 'I love it',
+                    farhan : 'Great',
+                    isha : 'Nice'
+                },
+                func : function funct()
+                {
+                    console.log('i am a function under the object');
+                }
+            };
+            console.log(car);
+            console.log(car.name);
+            console.log(car['duration-life']);
+            console.log(car.reveiws.farhan);
+            car.func();
+
+            console.log(typeof console.log);
+            console.log(typeof console);
+            console.log(typeof car.func);
+
+            // Json vs javascript object
+            /*
+            Json has the similar quality as javascript has,it doesn't support functions, but in few functionalities,but Json is understandble by every programming language
+            */
+           let ok = JSON.stringify(car);
+           console.log(ok);
+           let po = JSON.parse(ok);
+           console.log(po);
+
+           //local storage
+           /* now varibales are temporary, if we see our rock-paper-scissors game, if we refresh the page, all the values stored in the variables will be disappeared/ removes as if has been reset, so i
+           in this case, we have localstorage
+           !local storage only stores strings
+           */
+
+           //AUTO BOXING 
+           console.log('hello'.length);
+           console.log('hello'.toUpperCase());
+
+           /*javascript copies the reference, if you entirely copy the whole object, it would be misuse of memory, 
+           it just copies the refernce*/
+
+           const object69 = {
+              message : 'Hello'
+           };
+
+           const object70 = object69;// they are not copying the object, they are just copying the reference
+           object69.message = 'marry me'; //  even if we use const as a type of object, still the elements of the object can be changed
+           console.log(object69.message);
+           console.log(object70.message);
+           
+           // we can't compare object directly
+           const object71 = {
+            message : 'marry me'
+           }
+           ;
+           console.log( object71 === object69);//though the values are same to same, but it will return false..beacause the reference are diffirent
+           console.log( object69 === object70);//it points to the same reference, so it will return true
+
+           const object56 = {
+            message : 'Hello Ridita'
+           }
+           ;
+           const message = object56.message;//no problem if the object property name and variable name are similar
+           console.log(message);
+
+           const object59 = {
+            message : message,
+            func : function print()
+            {
+                console.log('Inside the object function/method');
+                console.log(typeof print);
+            },
+            method()
+            {
+                console.log('you can use function in this way also')
+            }
+           };
+           console.log(message);//here the object property has the values that variable message has stores
+           object59.func();
+           object59.method();
+
+           const object73 = {
+            message1 : 'Ridita',
+            age : 25
+           };
+          
+           const {message1 ,age} = object73;
+           console.log(message1);
+           console.log(age);
+
+
+
+
+        </script>
+    </body>
+</html>

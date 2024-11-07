@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            if(5){
+                console.log('false');
+            }
+            else{
+                console.log('true');
+            }
+            const cartQuantity = 5;
+            if (cartQuantity){
+                console.log(cartQuantity);
+            }
+            if(0){
+                console.log('lol');
+            }
+            //NaN example
+            console.log('text'/5.00);
+
+            //undefined example
+            let okaybye;
+            console.log(okaybye);
+
+            //in this case, if we want to use const, we have to place e value in it, let e value na dileo chole
+            const oka = undefined;
+            console.log(oka);
+
+            //ternary operator
+            const result = true ? 'truthy': 'false';
+            console.log(result);
+
+            const resul = undefined? 'true': 'false';
+            console.log(resul);
+
+            //short circuit
+            //and operator - and operator e 2 ta condition e fulfil hoy, jodi first condition false hoy,tahole code ta ar shamne jabe na..cause it's false already, jodi shamner ta true hoy,and porer tao true hoy, then it will print porer true
+            console.log('short cuts');
+            false && console.log('hello');
+            const message1 = true && 'hello1';
+            console.log(message1);
+            let uo = false && 'oyehello';
+            console.log(uo);
+            let pu = 'oyehello' && false;
+            console.log(pu);
+
+            //OR operator - OR operator e jodi j jono ekta fulfil hoy,jodi 1st er tai true hoy, then it will print first one, 2nd ta true hole 2ns one
+            console.log('OR OPERATOR');
+            false || console.log('or operation');
+            true || console.log('or operate');
+            const consp = 1 || 'hello brother';
+            console.log(consp);
+            const uopo = 0 || 'my name is shila';
+            console.log(uopo);
+            const negaa = 0 || false;
+            console.log(negaa);
+
+            //Default operator
+
+            const currency = 'EUR' || 'USD';
+            console.log(currency);
+
+            const currency1 = undefined || 'USD';
+            console.log(currency1);
+
+            const currency2 = 'EUR' || undefined;
+            console.log(currency2);
+
+            const currency3 = undefined || undefined;
+            console.log(currency3);
+
+
+
+
+            </script>
+    </body>
+</html>

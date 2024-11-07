@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Arrays and loops</title>
+    </head>
+    <body>
+        <script>
+            const myArray = [1,2,3,4];
+            console.log(myArray);
+            myArray.push(10);
+            console.log(myArray);
+            const myArray2 = [1,10,'ridita',{name : 'ridita'},[10,20]];
+            console.log(myArray2[4]);
+            myArray2.splice(0,2);
+            console.log(myArray2);
+            myArray2.push(100);
+            console.log(myArray2);
+
+            let i = 0;
+            while(i<5)
+            {
+                console.log(i);
+                i++;            }
+
+            for(let i=0;i<4;i++)
+            {
+                console.log(i);
+            }
+
+            let randomNumber = 0;
+            while(randomNumber < 0.47)
+            {
+                randomNumber = Math.random();console.log(randomNumber);
+                
+            }
+            const todo = ['fish','meat','rixe'];
+            for(let i = 0;i<todo.length;i++)
+            {
+                console.log(todo[i]);
+            }
+        </script>
+
+    </body>
+</html>

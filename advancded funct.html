@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Function</title>
+    </head>
+    <body>
+        <script>
+            function greeting()
+            {
+                console.log('Good Morning');
+            }
+            greeting();
+
+            const function1 = function (){ // anonymous function
+                console.log('Hello World');
+            };
+
+            function1();
+
+            function func3()
+            {
+               console.log('This is function');
+            }
+
+            function func1(func)
+            {
+                func();
+            }
+
+            func1(func3);
+
+            setTimeout(func3,3000);//asynchronus code
+            console.log('lalalalal');
+
+            //setInterval(greeting,3000);
+
+        </script>
+    </body>
+</html>

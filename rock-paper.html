@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <p>Rock Paper Scissors</p>
+
+    <button onclick=" 
+    let randomnumber = (Math.random())*100;
+    let card = '';
+    let verdict = '';
+    if(randomnumber <= 25)
+    {
+      card = 'Paper';
+      console.log(randomnumber);
+      coun++;
+    }
+    else if (randomnumber>25 && randomnumber < 50)
+    {
+        card = 'Rock';
+        console.log(randomnumber);
+    }
+    else if (randomnumber > 50)
+    {
+        card = 'Scissors';
+        console.log(randomnumber);
+    }
+    if ( card === 'Rock')
+    {
+        verdict = 'Tie';
+    }
+    else if ( card === 'Paper')
+    {
+        verdict = 'You win';
+    }
+    else
+    {
+        verdict = 'You fail';
+    }
+
+    alert(verdict);
+    ">Rock</button>
+
+    <button onclick=" 
+    randomnumber = (Math.random())*100;
+    card = '';
+    verdict = '';
+    if(randomnumber <= 25)
+    {
+      card = 'Paper';
+      console.log(randomnumber);
+      coun++;
+    }
+    else if (randomnumber>25 && randomnumber < 50)
+    {
+        card = 'Rock';
+        console.log(randomnumber);
+    }
+    else if (randomnumber > 50)
+    {
+        card = 'Scissors';
+        console.log(randomnumber);
+    }
+    if ( card === 'Rock')
+    {
+        verdict = 'You win';
+    }
+    else if ( card === 'Paper')
+    {
+        verdict = 'You TIe';
+    }
+    else
+    {
+        verdict = 'You fail';
+    }
+
+    alert(verdict);">Paper</button>
+
+
+    <button onclick=" 
+    randomnumber = (Math.random())*100;
+    card = '';
+    verdict = '';
+    if(randomnumber <= 25)
+    {
+      card = 'Paper';
+      console.log(randomnumber);
+      coun++;
+    }
+    else if (randomnumber>25 && randomnumber < 50)
+    {
+        card = 'Rock';
+        console.log(randomnumber);
+    }
+    else if (randomnumber > 50)
+    {
+        card = 'Scissors';
+        console.log(randomnumber);
+    }
+    if ( card === 'Rock')
+    {
+        verdict = 'You lose';
+    }
+    else if ( card === 'Paper')
+    {
+        verdict = 'You win';
+    }
+    else
+    {
+        verdict = 'You tie';
+    }
+
+    alert(verdict);  ">Scissors</button>
+
+
+
+    <script>
+        let coun = 0;
+        let comp = 0;
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

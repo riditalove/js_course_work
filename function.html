@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+    <body>
+        <script>
+            /*rules for function names
+             function name can't be in special word or in keywords
+             can't start with a number
+             can't use special character
+             use camel case
+            
+        
+            function fun(){
+                console.log('hello');
+                console.log(2+2);
+            }
+            fun();
+            fun();*/
+
+            //parameterized function
+
+            function tax(cost,tax_percentage)
+            {
+                console.log(tax_percentage);
+                return (cost*tax_percentage);
+
+            }
+
+            console.log(tax(34,0.1));
+            console.log(tax(3400));
+
+            // default parameter
+
+            function tax1(cost, tax_percentage = 0.4){
+                return (cost*tax_percentage);
+
+            }
+            console.log(tax1(200,0.8));
+            console.log(tax1(3498));
+
+
+
+
+        </script>
+    </body>
+</html>

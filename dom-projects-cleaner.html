@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        DOM cleaner code
+    </title>
+    <style>
+
+        body {
+            font-family: Arial;
+        }
+
+        .subscribe_button {
+            border: none;
+            background-color: black;
+            color: wheat;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .cost-input{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .is_subscribed {
+            background-color: rgb(214, 205, 205);
+            color: black;
+        }
+        .Calculate-button{
+              background-color: green;
+              color: wheat;
+              border: none;
+              font-size: 15px;
+              padding: 12px 15px;
+              cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>
+        Please do subscribe
+    </p>
+    <button onclick=" subscribe() " class="js_subscribe_button subscribe_button">Subscribe</button>
+    <p>
+        Amazon Shipping Calculator<br>
+        Orders under $40 = +$10 shipping<br>
+        Orders over $40 = FREE shipping.
+    </p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" 
+    >
+    
+
+    <button onclick=" calculation(); " class="Calculate-button">Calculate</button>
+
+    <script>
+        function subscribe() {
+            const button_lekha = document.querySelector('.js_subscribe_button');
+
+            if (button_lekha.innerText === 'Subscribe') {
+                button_lekha.innerText = 'Subscribed!';
+                button_lekha.classList.add('is_subscribed');
+            }
+            else {
+                button_lekha.innerText = 'Subscribe';
+                button_lekha.classList.remove('is_subscribed');
+            }
+
+        }
+        function calculation()
+        {
+            const inp = document.querySelector('.js-cost-input');
+            const input_value = inp.value;
+            console.log(input_value);
+            let numb = Number(input_value);
+            console.log(numb+10);
+
+        }
+    </script>
+</body>
+
+</html>

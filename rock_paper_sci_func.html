@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <p>Rock Paper Scissors</p>
+
+    <button onclick=" 
+ 
+    func2('Rock');
+    ">Rock</button>
+
+    <button onclick=" 
+    
+    func2('Paper');
+    ">Paper</button>
+
+
+    <button onclick=" 
+    
+    func2('Scissors');
+     ">Scissors</button>
+
+    <button onclick="
+       score.win = 0;
+       score.lose = 0;
+       score.tie = 0;
+       localStorage.removeItem('score');
+     ">Reset</button>
+
+
+
+    <script>
+        // script elements run when the page is loaded
+
+        //making an object
+        /* const score = {
+             win: 0,
+             lose: 0,
+             tie: 0
+         };*/
+
+        let score = JSON.parse(localStorage.getItem('score'))
+            || { win: 0, lose: 0, tie: 0 }
+
+            ;/*the thing stores in 'store' is basically a string in JSON format, we have to make it an object,
+        to do that we have to use localStorage.parse()*/
+        console.log(score);
+
+        function func1() {
+            let randomnumber = (Math.random()) * 100;
+            let card = '';
+            let verdict = '';
+            if (randomnumber <= 25) {
+                card = 'Paper';
+                console.log(randomnumber);
+
+            }
+            else if (randomnumber > 25 && randomnumber < 50) {
+                card = 'Rock';
+                console.log(randomnumber);
+            }
+            else if (randomnumber > 50) {
+                card = 'Scissors';
+                console.log(randomnumber);
+            }
+
+            return card;
+            //after the return statement nothing will execute after even if the code is stil much more after the return
+            console.log("Hehe");//it wont execute after the return statement
+        }
+
+        function func2(cardName) {
+            let verdict = '';
+            let ComputerCard = func1();
+            console.log(ComputerCard);
+            if (cardName === 'Scissors') {
+                if (ComputerCard === 'Rock') {
+                    verdict = 'You lose';
+                }
+                else if (ComputerCard === 'Paper') {
+                    verdict = 'You win';
+                }
+                else {
+                    verdict = 'Tie';
+                }
+
+
+
+            }
+        }
+
+        if (cardName === 'Paper') {
+            if (ComputerCard === 'Rock') {
+                verdict = 'You win';
+            }
+            else if (ComputerCard === 'Paper') {
+                verdict = 'Tie';
+            }
+            else {
+                verdict = 'You lose';
+            }
+
+
+        }
+
+        if (cardName === 'Rock') {
+            if (ComputerCard === 'Rock') {
+                verdict = 'Tie';
+            }
+            else if (ComputerCard === 'Paper') {
+                verdict = 'You lose';
+            }
+            else {
+                verdict = 'You win';
+            }
+
+        }
+
+        if (verdict === 'You lose') {
+            score.lose += 1;
+        }
+        else if (verdict === 'You win') {
+            score.win += 1;
+        }
+        else if (verdict === 'Tie') {
+            score.tie += 1;
+        }
+
+        //localstorage
+        /* local storage only supports the string
+        */
+        // localStorage.setItem('message','hello69ridita');//this hello is the value, and message is variable name in which the string 'hello' has been saved in the local storage
+        localStorage.setItem('score', JSON.stringify(score));//because localStorage.setItem can't take objects, we have to make them strings to pss through the function which can be done by the JSON.stringify funciton
+        alert(`The computer has make its move ${ComputerCard} , you have make it ${cardName} 
+the result is ${verdict}
+score: losses = ${score.lose} , ties = ${score.tie} , wins = ${score.win}`);
+
+
+        //null vs undefined
+          /* null is a value, when we intentionally keep something null/empty*/
+
+
+        
+
+    </script>
+
+</body>
+
+</html>
